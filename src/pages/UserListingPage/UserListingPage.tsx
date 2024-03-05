@@ -1,11 +1,12 @@
 import {PageWrapper} from "components/nemo-ui";
+import {UserListingContainer} from "containers";
 
 
 export const UserListingPage = () => {
 
     return (
         <PageWrapper>
-            <h1>User Listing Page</h1>
+            <UserListingContainer/>
         </PageWrapper>
     )
 }
