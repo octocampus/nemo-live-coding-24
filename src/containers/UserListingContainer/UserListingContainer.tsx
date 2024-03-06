@@ -1,63 +1,12 @@
-import {UserRow} from "../../components/UserRow/UserRow";
-import {UserDto} from "../../types";
-import {useGetUsers} from "../../services/users/useGetUsers";
+import { useGetUsers } from "services";
+import { UsersListing } from "components";
 
-const USERS: UserDto[] = [{
-    firstName: "John",
-    lastName: "Doe",
-    email: "john@doe.com",
-    status: "ACTIF",
-    createAt: ""
-
-},
-    {
-        firstName: "John",
-        lastName: "Doe",
-        email: "john@doe.com",
-        status: "ACTIF",
-        createAt: ""
-
-    },
-    {
-        firstName: "John",
-        lastName: "Doe",
-        email: "john@doe.com",
-        status: "ACTIF",
-       createAt:""
-
-    },
-    {
-        firstName: "John",
-        lastName: "Doe",
-        email: "john@doe.com",
-        status: "ACTIF",
-        createAt:""
-
-    }]
 export const UserListingContainer = () => {
+  const { data: users, isLoading } = useGetUsers();
 
-    const {data} = useGetUsers()
+  if (isLoading) return <div>Loading ...</div>;
 
-    if(!data) return null
+  if (!users) return <div>no data found</div>;
 
-    return <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>email</th>
-            <th>status</th>
-            <th>create at</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        {data.map( (user)=> (
-            <UserRow user={user}/>
-        ))}
-
-
-        </tbody>
-
-    </table>
-}
+  return <UsersListing users={users} />;
+};
