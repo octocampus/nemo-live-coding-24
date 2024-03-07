@@ -1,0 +1,42 @@
+.wrapper {
+  --n-badge-success: var(--n-success);
+  --n-badge-warning: var(--n-warning);
+  --n-badge-danger: var(--n-danger);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+/* dot */
+.wrapper .dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+.wrapper.success .dot {
+  background-color: var(--n-badge-success);
+}
+.wrapper.warning .dot {
+  background-color: var(--n-badge-warning);
+}
+.wrapper.danger .dot {
+  background-color: var(--n-badge-danger);
+}
+
+/* label */
+.wrapper .label {
+  font-weight: 700;
+}
+.wrapper.success .label {
+  color: var(--n-badge-success);
+}
+.wrapper.warning .label {
+  color: var(--n-badge-warning);
+}
+.wrapper.danger .label {
+  color: var(--n-badge-danger);
+}

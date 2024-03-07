@@ -1,0 +1,9 @@
+.wrapper {
+  --n-card-bg-color: var(--n-white);
+  background-color: var(--n-card-bg-color);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid var(--n-border-color);
+  box-shadow: var(--n-box-shadow);
+  width: 100%;
+}

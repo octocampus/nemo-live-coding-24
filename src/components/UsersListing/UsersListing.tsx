@@ -1,6 +1,9 @@
 import { UserRow } from "../UserRow";
 import { UserDto } from "types";
 
+import styles from "./UsersListing.module.css";
+import { UserListingSkeleton } from "./UserListingSkeleton";
+
 interface UsersListingProps {
   users?: UserDto[];
   isLoading?: boolean;
@@ -8,7 +11,7 @@ interface UsersListingProps {
 
 export const UsersListing = ({ users = [], isLoading }: UsersListingProps) => {
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <UserListingSkeleton />;
   }
 
   if (!users.length) {
@@ -16,21 +19,10 @@ export const UsersListing = ({ users = [], isLoading }: UsersListingProps) => {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>email</th>
-          <th>status</th>
-          <th>create at</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user) => (
-          <UserRow user={user} />
-        ))}
-      </tbody>
-    </table>
+    <div className={styles.wrapper}>
+      {users.map((user) => (
+        <UserRow user={user} />
+      ))}
+    </div>
   );
 };

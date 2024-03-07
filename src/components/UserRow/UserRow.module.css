@@ -1,3 +1,50 @@
 .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+}
 
+.user_info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user_info_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.creation_date {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    color: var(--n-text-color-100);
+    font-weight: 300;
+}
+
+.value {
+    font-size: 14px;
+}
+
+.status {
+    margin-left: auto;
+}
+
+/* UserRowSkeleton */
+
+.skeleton_wrapper {
+    --n-card-bg-color: var(--n-white);
+    background-color: var(--n-card-bg-color);
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
 }
