@@ -7,3 +7,9 @@ export interface UserDto {
   createdAt: string;
   status: UserStatus;
 }
+
+export interface UserCreationDto {
+  email: string;
+  firstName: string;
+  lastName: string;
+}
