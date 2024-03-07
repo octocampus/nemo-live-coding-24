@@ -2,8 +2,9 @@ import { UserRow } from "../UserRow";
 import { UserDto } from "types";
 
 import styles from "./UsersListing.module.css";
-import { UserListingSkeleton } from "./UserListingSkeleton";
+import { UsersListingSkeleton } from "./UsersListingSkeleton";
 import { UserRowAction } from "../UserRowActions";
+import { UsersListingEmptyState } from "./UsersListingEmptyState";
 
 interface UsersListingProps {
   users?: UserDto[];
@@ -22,11 +23,11 @@ export const UsersListing = ({
   };
 
   if (isLoading) {
-    return <UserListingSkeleton />;
+    return <UsersListingSkeleton />;
   }
 
   if (!users.length) {
-    return <div>No data found</div>;
+    return <UsersListingEmptyState />;
   }
 
   return (
