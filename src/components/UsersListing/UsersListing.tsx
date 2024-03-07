@@ -3,9 +3,18 @@ import { UserDto } from "types";
 
 interface UsersListingProps {
   users?: UserDto[];
+  isLoading?: boolean;
 }
 
-export const UsersListing = ({ users = [] }: UsersListingProps) => {
+export const UsersListing = ({ users = [], isLoading }: UsersListingProps) => {
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  if (!users.length) {
+    return <div>No data found</div>;
+  }
+
   return (
     <table>
       <thead>
