@@ -2,13 +2,19 @@ import { UserDto } from "types";
 import styles from "./UserRow.module.css";
 import { Avatar, Badge, Card, Text } from "../nemo-ui";
 import { formatDate, getUserFullName } from "utils";
-import { UserRowActions } from "../UserRowActions";
+import { UserRowAction, UserRowActions } from "../UserRowActions";
 
 interface UserRowProps {
   user: UserDto;
+  onAction: (action: UserRowAction) => void;
 }
 
-export const UserRow = ({ user }: UserRowProps) => {
+export const UserRow = ({ user, onAction }: UserRowProps) => {
+  // Event handlers
+  const handleOnAction = (action: UserRowAction) => {
+    onAction(action);
+  };
+
   return (
     <Card className={styles.wrapper}>
       <div className={styles.user_info}>
@@ -25,10 +31,13 @@ export const UserRow = ({ user }: UserRowProps) => {
       </div>
 
       <div className={styles.status}>
-        <Badge variant={"success"} label={user.status} />
+        <Badge
+          variant={user.status == "SUSPENDU" ? "danger" : "success"}
+          label={user.status}
+        />
       </div>
 
-      <UserRowActions />
+      <UserRowActions onAction={handleOnAction} user={user} />
     </Card>
   );
 };
