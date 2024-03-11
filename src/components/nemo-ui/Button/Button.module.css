@@ -1,0 +1,111 @@
+.btn {
+    /* background colors */
+    --n-button-primary-bg-color-fill: var(--n-brand);
+    --n-button-primary-bg-color-outline: transparent;
+    --n-button-primary-bg-color-focus-fill: var(--n-bg-color-secondary);
+    --n-button-primary-bg-color-hover-fill: var(--n-bg-color-secondary);
+    /* text colors */
+    --n-button-primary-text-color-fill: var(--n-text-inverse);
+    --n-button-primary-text-color-outline: var(--n-text-color);
+    --n-button-primary-text-color-outline-focus: var(--n-text-color-secondary);
+    --n-button-primary-text-color-outline-hover: var(--n-text-color-secondary);
+    /* border colors */
+    --n-button-primary-border-color: var(--n-brand);
+    --n-button-primary-border-color-focus: var(--n-border-color-secondary);
+    --n-button-primary-border-color-hover: var(--n-border-color-secondary);
+
+    position: relative;
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    margin: 0;
+    border-width: 0;
+    border-style: solid;
+
+    /* Remove the inheritance of text transform on button in Edge, Firefox, and IE. */
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    /* Font smoothing for Firefox */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Correct the inability to style clickable types in iOS and Safari. */
+    -webkit-appearance: button;
+
+    /* Adjacent buttons should be aligned correctly */
+    vertical-align: top;
+
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn::-moz-focus-inner {
+    border: 0;
+    /* Remove the inner border and padding for button in Firefox. */
+    border-style: none;
+    padding: 0;
+    /* Use uppercase PX so values don't get converted to rem */
+    margin-block-start: -2px;
+    margin-block-end: -2px;
+}
+
+.btn:disabled,
+.btn.is_disabled {
+    cursor: default;
+}
+
+/* variants */
+.primary {
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+    padding-block-start: 8px;
+    padding-block-end: 8px;
+    height: 40px;
+    border-radius: 40px;
+    min-width: 120px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid var(--n-button-primary-border-color);
+}
+
+.primary.fill {
+    background-color: var(--n-button-primary-bg-color-fill);
+    color: var(--n-button-primary-text-color-fill);
+    border-color: var(--n-button-primary-border-color);
+}
+
+.primary.outline {
+    background-color: var(--n-button-primary-bg-color-outline);
+    color: var(--n-button-primary-text-color-outline);
+    border-color: var(--n-button-primary-border-color);
+}
+
+.primary.fill:hover {
+    background-color: var(--n-button-primary-bg-color-hover-fill);
+    border-color: var(--n-button-primary-border-color-hover);
+}
+
+.primary.fill:focus {
+    background-color: var(--n-button-primary-bg-color-focus-fill);
+    border-color: var(--n-button-primary-border-color-focus);
+}
+
+.primary.outline:hover {
+    color: var(--n-button-primary-text-color-outline-hover);
+    border-color: var(--n-button-primary-border-color-hover);
+}
+
+.primary.outline:focus {
+    color: var(--n-button-primary-text-color-outline-focus);
+    border-color: var(--n-button-primary-border-color-focus);
+}

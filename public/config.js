@@ -1,0 +1,4 @@
+window.ENV = {
+  REACT_APP_API_URL: "https://cdvvbtvbpavvrituwkca.supabase.co/rest/v1",
+  REACT_APP_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkdnZidHZicGF2dnJpdHV3a2NhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk2MzA2MTksImV4cCI6MjAyNTIwNjYxOX0.vIN1UDJXnFMje3eXwPGLBfLnIQA2BxEkw0dq9TIjz7U"
+}

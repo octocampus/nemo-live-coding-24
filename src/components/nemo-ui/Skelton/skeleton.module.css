@@ -1,0 +1,35 @@
+.wrapper {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--n-bg-color);
+}
+
+.wrapper::before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    var(--n-bg-color) 0%,
+    rgba(0, 0, 0, 0.07) 20%,
+    var(--n-bg-color) 40%,
+    var(--n-bg-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: shimmer 1s linear infinite;
+}
+
+.circular {
+  border-radius: 100%;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+  100% {
+    background-position: 450px 0;
+  }
+}

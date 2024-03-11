@@ -1,0 +1,19 @@
+.form_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 12px;
+}
+
+.form_fields_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.action_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 4px;
+}

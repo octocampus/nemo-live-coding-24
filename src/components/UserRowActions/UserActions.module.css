@@ -1,0 +1,4 @@
+.trigger_btn[aria-expanded="true"] {
+    background-color: var(--n-bg-color-secondary);
+    color: var(--n-text-inverse);
+}

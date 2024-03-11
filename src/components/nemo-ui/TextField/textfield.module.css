@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.input {
+    border: 1px solid var(--n-border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--n-text-color);
+    padding: 12px;
+    min-width: 260px;
+}
+
+.input.full_width {
+    width: 100%;
+}
+
+.error_msg {
+    font-size: 12px;
+    color: var(--n-text-color-danger);
+}
